@@ -8,7 +8,7 @@ Aplicação feita com 3 contêineres Docker que contêm:
 
 Aplicação web: **http://localhost:4200/**
 
-![Kanban](https://github.com/wkrzywiec/kanban-board/blob/master/assets/kanban.gif)
+![Kanban](https://github.com/daienelima/kanban-board/blob/master/assets/kanban.gif)
 
 ---
 
@@ -59,7 +59,7 @@ kanban-postgres:
 
 Backend: **http://localhost:8080/api/swagger-ui.html**
 
-![swagger-ui](https://github.com/wkrzywiec/kanban-board/blob/master/assets/swagger.png)
+![swagger-ui](https://github.com/daienelima/kanban-board/blob/master/assets/swagger.png)
 
 #### kanban-ui (Frontend)
 
