@@ -1,20 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule, MatInputModule, MatSelectModule } from "@angular/material";
-import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatListModule } from "@angular/material/list";
+import {
+  MatDialogModule,
+  MatInputModule,
+  MatSelectModule,
+} from "@angular/material";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
 
-import { HomeComponent } from './home/home.component';
-import { KanbanComponent } from './kanban/kanban.component';
-import { TaskDialogComponent } from './task-dialog/task-dialog.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { KanbanDialogComponent } from './kanban-dialog/kanban-dialog.component';
+import { HomeComponent } from "./home/home.component";
+import { KanbanComponent } from "./kanban/kanban.component";
+import { TaskDialogComponent } from "./task-dialog/task-dialog.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { KanbanDialogComponent } from "./kanban-dialog/kanban-dialog.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +27,7 @@ import { KanbanDialogComponent } from './kanban-dialog/kanban-dialog.component';
     HomeComponent,
     KanbanComponent,
     TaskDialogComponent,
-    KanbanDialogComponent
+    KanbanDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +41,11 @@ import { KanbanDialogComponent } from './kanban-dialog/kanban-dialog.component';
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [TaskDialogComponent, KanbanDialogComponent]
+  entryComponents: [TaskDialogComponent, KanbanDialogComponent],
 })
-export class AppModule { }
+export class AppModule {}

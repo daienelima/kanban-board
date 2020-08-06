@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { Kanban } from '../model/kanban/kanban';
-import { KanbanService } from '../service/kanban-service.service';
-import { MatDialog, MatDialogConfig } from '@angular/material';
-import { KanbanDialogComponent } from '../kanban-dialog/kanban-dialog.component';
+import { Component, OnInit } from "@angular/core";
+import { Kanban } from "../model/kanban/kanban";
+import { KanbanService } from "../service/kanban-service.service";
+import { MatDialog, MatDialogConfig } from "@angular/material";
+import { KanbanDialogComponent } from "../kanban-dialog/kanban-dialog.component";
+import { Observable } from "rxjs";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-
-  kanbanList: Kanban[];
+  kanbanList$: Observable<Kanban[]>;
 
   constructor(
     private kanbanService: KanbanService,
     private dialog: MatDialog
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.retrieveAllKanbanBoards();
@@ -26,18 +26,12 @@ export class HomeComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
-      kanban: new Kanban()
+      kanban: new Kanban(),
     };
-    this.dialog.open(KanbanDialogComponent, dialogConfig)
+    this.dialog.open(KanbanDialogComponent, dialogConfig);
   }
 
   private retrieveAllKanbanBoards(): void {
-    this.kanbanService.retrieveAllKanbanBoards().subscribe(
-
-      response => {
-        this.kanbanList = response;
-      }
-    )
+    this.kanbanList$ = this.kanbanService.retrieveAllKanbanBoards();
   }
-
 }

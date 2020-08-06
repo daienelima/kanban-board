@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -12,6 +14,8 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Table(name = "task")
+@Getter
+@Setter
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Task {
 
